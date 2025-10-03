@@ -34,8 +34,23 @@ def test_area_of_circle_zero_radius():
     assert result == 0
 
 
+
+    """Negatif yarıçap için ValueError fırlatılmalı."""
+    with pytest.raises(ValueError):
+        area_of_circle(-1)
+
+
 def test_get_nth_fibonacci_zero():
+    """Negatif n için ValueError fırlatılmalı."""
+    with pytest.raises(ValueError):
+        get_nth_fibonacci(-5)
+
+
     """Test with n=0."""
+    """n=10 için doğru fibonacci değeri dönmeli."""
+    n = 10
+    result = get_nth_fibonacci(n)
+    assert result == 55
     # Arrange
     n = 0
 
